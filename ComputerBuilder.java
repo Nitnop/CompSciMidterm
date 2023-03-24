@@ -6,6 +6,7 @@ public class ComputerBuilder {
 
     private static Scanner userInput = new Scanner(System.in);
     private static int laptopOrDesktop;
+    private static String buildType;
     private static boolean whileTrue = false;
     private static String nameOfBuild;
     private static String nameOfBrand;
@@ -15,6 +16,8 @@ public class ComputerBuilder {
     static int hardDriveCapacity;
     static String monitorBrand;
     static int monitorSize;
+    static String TYPE_FORMAT = "%-20\n";
+    static String dashes = "----------------------------------------------------";
 
 
     static int getLaptopOrDesktop(){
@@ -41,26 +44,37 @@ public class ComputerBuilder {
         
     }
 
+    static String type(int laptopOrDesktop){
+        if (laptopOrDesktop == 1){
+            buildType = "Desktop";
+        }
+        else{
+            buildType = "Laptop";
+            
+        }
+        return buildType;
+    }
+
     static String setNameOfBuild(){
         System.out.println("What would you like to name this project/build?");
-        nameOfBuild = userInput.nextLine();
+        String nameOfBuild = userInput.next();
         return nameOfBuild;
     }
 
     static String setComputerBrand(){
         System.out.println("What brand of computer woudl you like?");
-        String nameOfBrand = userInput.nextLine();
+        String nameOfBrand = userInput.next();
         return nameOfBrand;
     }
     static String setSizeOfCase(){
         System.out.println("What size of Case do you want?");
-        String size = userInput.nextLine();
+        String size = userInput.next();
         return size;
     }
 
     static String setCPUBrand(){
         System.out.println("What brand of CPU do you want?");
-        String brand = userInput.nextLine();
+        String brand = userInput.next();
         return brand;
     }
     static int setCPUSpeed(){
@@ -75,7 +89,7 @@ public class ComputerBuilder {
     }
     static String setMonitorBrand(){
         System.out.println("what brand of monitor do you want?");
-        String brand = userInput.nextLine();
+        String brand = userInput.next();
         return brand;
     }
 
@@ -85,8 +99,8 @@ public class ComputerBuilder {
         return size;
     }
 
-    ComputerBuilder(String nameOfBuild, String nameOfBrand, int cpuBrand, int cpuSpeed, 
-    int hardDriveCapacity, int monitorSize) {
+    ComputerBuilder(String nameOfBuild, String nameOfBrand, String cpuBrand, 
+    int cpuSpeed, int hardDriveCapacity, int monitorSize) {
         this.nameOfBrand = nameOfBrand;
         this.nameOfBuild = nameOfBuild;
         this.cpuBrand = cpuBrand;
@@ -98,5 +112,14 @@ public class ComputerBuilder {
         this(nameOfBuild, nameOfBrand, cpuBrand, cpuSpeed, hardDriveCapacity, monitorSize);
         this.sizeOfCase = sizeOfCase;
         this.monitorBrand = monitorBrand;
+    }
+    static void print(String nameOfBuild){
+        System.out.println("Congradulations on the new computer \n Recipt for " +
+         nameOfBuild);
+        System.out.printf(TYPE_FORMAT, buildType);
+        System.out.println(dashes);
+        System.out.printf();
+
+
     }
 }
