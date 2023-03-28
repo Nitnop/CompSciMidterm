@@ -2,7 +2,7 @@
  * this is the java version of a call center
  */
 
-
+import java.util.*;
 
 public class ComputerBuilderDriver{
 
@@ -51,7 +51,7 @@ public class ComputerBuilderDriver{
     if (laptopOrDesktop == 1){
         ComputerBuilder myBuild = new ComputerBuilder(sizeOfCase, monitorBrand);
     }
-    ComputerBuilder.print(nameOfBuild);
+    ComputerBuilder.print();
     // to do: make up a bunch of prices and options for all the above
     // probably go to newegg.com and just use what I find there
     
