@@ -6,30 +6,18 @@ import java.util.*;
 
 public class ComputerBuilderDriver{
 
-    static int laptopOrDesktop;
-    static String buildType;
-    static String laptopDesktop;
-    static String nameOfBuild;
-    static String nameOfBrand;
-    static String sizeOfCase;
-    static String cpuBrand;
-    static int cpuSpeed;
-    static int hardDriveCapacity;
-    static String monitorBrand;
-    static int monitorSize;
-
     public static void main(String[] args) {     
     // to do: prompt the user weather they want to bulid a PC or a Laptop
-        laptopOrDesktop = ComputerBuilder.getLaptopOrDesktop();
+        ComputerBuilder.getLaptopOrDesktop();
     // asign string for later printing
-        buildType = ComputerBuilder.type(laptopOrDesktop);
+        ComputerBuilder.type();
     // to do: prompt the user for a name for this build
-        nameOfBuild = ComputerBuilder.setNameOfBuild();
+        //nameOfBuild = ComputerBuilder.setNameOfBuild();
     // to do: prompt the user for brand
-        nameOfBrand = ComputerBuilder.setComputerBrand();
+        //nameOfBrand = ComputerBuilder.setComputerBrand();
     // to do: prompt the user for case type
     if (laptopOrDesktop == 1){
-        sizeOfCase = ComputerBuilder.setSizeOfCase();
+        ComputerBuilder.setSizeOfCase();
     }
     // to do: prompt the user for CPU brand
         cpuBrand = ComputerBuilder.setCPUBrand();

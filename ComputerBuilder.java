@@ -29,7 +29,7 @@ public class ComputerBuilder {
     static int sizePrice;
     static int hardDriveSize;
 
-    static int getLaptopOrDesktop(){
+    static void getLaptopOrDesktop(){
         
         int D = 1; int L = 2;
         while(!whileTrue){
@@ -49,11 +49,11 @@ public class ComputerBuilder {
                 System.out.println("Please enter 1 or 2");
             }
         }
-        return laptopOrDesktop;
+        
         
     }
 
-    static String type(int laptopOrDesktop){
+    static void type(int laptopOrDesktop){
         if (laptopOrDesktop == 1){
             buildType = "Desktop";
         }
@@ -61,7 +61,7 @@ public class ComputerBuilder {
             buildType = "Laptop";
             
         }
-        return buildType;
+        
     }
 /* 
     static String setNameOfBuild(){
@@ -77,7 +77,7 @@ public class ComputerBuilder {
         return nameOfBrand;
     }
     */
-    static String setSizeOfCase(){
+    static void setSizeOfCase(){
         System.out.println("What size of Case do you want?\n"+
         " 1 for mini\n 2 for full");
 
@@ -87,16 +87,11 @@ public class ComputerBuilder {
             case 1:
                 sizeString = "mini";
                 sizePrice = 80;
-                return sizeString;
 
             case 2:
                 sizeString = "Full";
                 sizePrice = 120;
-                return sizeString;
-            
-            
         }
-        return sizeString;
     }
 
     static String setCPUBrand(){
