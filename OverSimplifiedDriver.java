@@ -3,8 +3,8 @@ import java.util.Scanner;
 public class OverSimplifiedDriver {
 
         public static void main(String[] args) {
-            Scanner userInput = new Scanner(System.in);
-            //try ()) {
+            
+            try (Scanner userInput = new Scanner(System.in)) {
                 System.out.println("Enter 1 for Laptop 2 for Desktop");
                 int userchoice = userInput.nextInt();
 
@@ -26,7 +26,9 @@ public class OverSimplifiedDriver {
                     break;
                 }
             }
-        }
+            }
+            }
+        
 
 		
 

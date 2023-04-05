@@ -6,30 +6,29 @@ public class Laptop {
     
     public Laptop(){
 
-        //Laptop myLaptop =new Laptop();
+        //Laptop myLaptop =new Laptop(); god I was so wrong with this one
 
-        String UserName;
-        String ComputerBrand;
-        String CpuBrand;
-        double CPUSpeed;
-        double HardDriveCapacity;
-        double MonitorSize;
         String userName;
+        String computerBrand;
+        String cpuBrand;
+        double cPUSpeed;
+        double hardDriveCapacity;
+        double monitorSize;
         String computerBrandString;
-       // double computerBrandMultiplyer;
+        double computerBrandMultiplyer;
     }
     
-    public Laptop(String userNameIn, String computerBrandStringIn,String cpuBrandString, double cpuSpeed, double hardDriveCapacity, double monitorSize){
+    public Laptop(String userNameIn, String computerBrandStringIn,String cpuBrandStringIn, double cpuSpeedIn, double hardDriveCapacityIn, double monitorSizeIn){
 
         //Laptop myLaptop =new Laptop();
 
-        userName = userNameIn;
-        computerBrandString = computerBrandStringIn;
-        this.cpuBrandString = cpuBrandString;
-        this.cpuSpeed = cpuSpeed;
-        this.hardDriveCapacity = hardDriveCapacity;
-        this.monitorSize = monitorSize;
-       // double computerBrandMultiplyer;
+        this.userName = userNameIn;
+        this.computerBrandString = computerBrandStringIn;
+        this.cpuBrandString = cpuBrandStringIn;
+        this.cpuSpeed = cpuSpeedIn;
+        this.hardDriveCapacity = hardDriveCapacityIn;
+        this.monitorSize = monitorSizeIn;
+        double computerBrandMultiplyer;
 
     }
 
@@ -113,6 +112,7 @@ public class Laptop {
         System.out.println("How much space do you think you'll need?");
         System.out.println("Enter a whole number for how many Terrbytes you want from 1 to 5");
         int usersize = userInput.nextInt();
+        // toDo input validation
         switch(usersize){
             case 1,2,3,4,5:
                 this.hardDriveCapacity = usersize;
