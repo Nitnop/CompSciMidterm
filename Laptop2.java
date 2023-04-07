@@ -13,6 +13,8 @@ public class Laptop2 {
     String userName;
     int hardDriveCapacity;
     double hardDrivePrice;
+    String tempWord;
+    int tempInt;
     //}
 
     Scanner userInput = new Scanner(System.in);
@@ -32,5 +34,19 @@ public class Laptop2 {
     }
     String getCpuBrand(){
         return this.cpuBrandString;
+    }
+
+    void setString(){
+        tempWord = userInput.next();
+    }
+    String getString(){
+        return tempWord;
+    }
+    
+    void setInt(){
+        tempInt = userInput.nextInt();
+    }
+    int getInt(){
+        return tempInt;
     }
 }
