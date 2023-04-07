@@ -79,22 +79,10 @@ public class Laptop {
         }
     }
     
-    static void setCPUSpeed(){
-        System.out.println("speed cost money, how fast do you wanna go?");
-        System.out.println("Enter 1 for 3Ghz or 2 for 4 Ghz");
-        int speed = userInput.nextInt();
-
-        switch(speed){
-            case 1:
-                cpuSpeed = 3;
-                cpuPrice = 180.0;
-                break;
-            case 2:
-                cpuSpeed = 4;
-                cpuPrice = 220.0;
-                break;
-        }
+    static int setCPUSpeed(int speed){
+        return speed;
     }
+
 
     static void setHardDriveCapacity(){
         System.out.println("How much space do you think you'll need?");
