@@ -56,7 +56,7 @@ public class Laptop {
 
     public void setComputerBrand(){ // not having to return values is nice, makes this much easier
         System.out.println("What brand of computer would you like?");
-        System.out.println("Enter 1 for Lenovo\n2 for Dell\n3 for AlienWare");
+        System.out.println("Enter\n1 for Lenovo\n2 for Dell\n3 for AlienWare");
         int computerBrandChoice = userInput.nextInt();
         switch(computerBrandChoice){
             case 1:

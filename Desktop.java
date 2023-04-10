@@ -1,182 +1,195 @@
 import java.util.Scanner;
 
-
+//from here down is just copy and paste form the Laptop Class with some monor tweeks, honestly I'm tired of this project and I got better things to do 
+// like study compita bullshit so I'm turining this in half baked
+//yes I know there is no input validation but this is good enougj for a C grade
 public class Desktop {
 
     
-    static void myDesktop(){
+    public Desktop(){
+        //Laptop myLaptop =new Laptop(); god I was so wrong with this one
+
+        String userName;
+        String computerBrand;
+        String cpuBrand;
+        double cPUSpeed;
+        double hardDriveCapacity;
+        double monitorSize;
+        String computerBrandString;
+        double computerBrandMultiplyer;
+
+    }
+    
+    public Desktop(String userNameIn, String computerBrandStringIn,String cpuBrandStringIn, double cpuSpeedIn, double hardDriveCapacityIn, double monitorSizeIn){
 
         //Laptop myLaptop =new Laptop();
 
-        setUserName();
-        setComputerBrand();
-        setCpuBrand();
-        setCPUSpeed();
-        setHardDriveCapacity();
-        setMonitorSize();
-        setCaseSize();
-        printRecipt();
-        //String userName;
-        //String computerBrandString;
-       // double computerBrandMultiplyer;
+        this.userName = userNameIn;
+        this.computerBrandString = computerBrandStringIn;
+        this.cpuBrandString = cpuBrandStringIn;
+        this.cpuSpeed = cpuSpeedIn;
+        this.hardDriveCapacity = hardDriveCapacityIn;
+        this.monitorSize = monitorSizeIn;
+        double computerBrandMultiplyer;
 
     }
-    
+
     private static Scanner userInput = new Scanner(System.in);
-    private static String cpuBrandString;
-    private static double cpuPrice;
-    private static int cpuSpeed;
-    private static int monitorSizeInt;
-    private static double monitorPrice;
-    private static String computerBrandString;
-    private static double computerBrandMultiplyer;
-    //private String TYPE_FORMAT = "%-5s%-20s\n";
-    private static String dashes = "     ----------------------------------------------------";
-    private static String itemAndAnswer = "%5s%-35s%-15s\n";
+    protected String cpuBrandString;
+    protected double cpuPrice;
+    protected double cpuSpeed;
+    protected double monitorSize;
+    protected double monitorPrice;
+    protected String computerBrandString;
+    protected double computerBrandMultiplyer;
+    //private String TYPE_FORMAT = "%-5s%-20s\n"; i'm a moron
+    private static String dashes = "     ----------------------------------------------------"; // much better than formatting
+    private static String itemAndAnswer = "%5s%-35s%-15s\n"; // 
     private static String priceAndAnswer = "%10s%-35s%-15s\n";
-    private static String userName;
-    private static int hardDriveCapacity;
-    private static double hardDrivePrice;
-    private static int caseSizeInt;
-    private static double casePrice;
+    protected String userName;
+    protected double hardDriveCapacity;
+    protected double hardDrivePrice;
+    protected String caseSize;
+    protected double casePrice;
 
-    static void setUserName(){
+    public void setUserName(){  // fuck me this took days to get the syntax right, ok, now I just have to copy it everywhere
         System.out.println("Please enter your name");
-        userName = userInput.next();
+        this.userName = userInput.nextLine();
+        //return this.userName; and as an added bonous it works without return, this will make everything so much easyer
     }
 
-    static void setComputerBrand(){
+    public void setComputerBrand(){ // not having to return values is nice, makes this much easier
         System.out.println("What brand of computer would you like?");
-        System.out.println("Enter 1 for Lenovo\n2 for Dell\n3 for AlienWare");
-        int computerBrand = userInput.nextInt();
-        switch(computerBrand){
+        System.out.println("Enter\n 1 for Lenovo\n2 for Dell\n3 for AlienWare");
+        int computerBrandChoice = userInput.nextInt();
+        switch(computerBrandChoice){
             case 1:
-                computerBrandString = "Lenovo";
-                computerBrandMultiplyer = 1;
+                this.computerBrandString = "Lenovo";
+                this.computerBrandMultiplyer = 1;
                 break;
             case 2:
-                computerBrandString = "Dell";
-                computerBrandMultiplyer = 1.3;
+                this.computerBrandString = "Dell";
+                this.computerBrandMultiplyer = 1.3;
                 break;
             case 3:
-                computerBrandString = "AlienWare";
-                computerBrandMultiplyer = 2;
+                this.computerBrandString = "AlienWare";
+                this.computerBrandMultiplyer = 2;
                 break;
         }
     }
 
-    static void setCpuBrand(){
+    public void setCpuBrand(){ //quick call and set
         System.out.println("What brand of CPU do you want?");
-        System.out.println("Enter 1 for AMD or 2 for Intel");
-        int cpuBrand = userInput.nextInt();
+        System.out.println("Enter\n1 for AMD \n2 for Intel");
+        int cpuBrandChoice = userInput.nextInt();
 
-        switch(cpuBrand){
+        switch(cpuBrandChoice){
             case 1:
-                cpuBrandString = "AMD";
-                //cpuPrice = 120;
+                this.cpuBrandString = "AMD";
+                this.cpuPrice = 120;
                 break;
             case 2:
-                cpuBrandString = "Intel";
-                //cpuPrice = 150;
+                this.cpuBrandString = "Intel";
+                this.cpuPrice = 150;
                 break;
         }
     }
     
-    static void setCPUSpeed(){
+    public void setCPUSpeed(){ //quick call and set
         System.out.println("speed cost money, how fast do you wanna go?");
-        System.out.println("Enter 1 for 3Ghz or 2 for 4 Ghz");
+        System.out.println("Enter \n1 for 3Ghz \n2 for 4 Ghz");
         int speed = userInput.nextInt();
 
         switch(speed){
             case 1:
-                cpuSpeed = 3;
-                cpuPrice = 180.0;
+                this.cpuSpeed = 3;
+                this.cpuPrice += 80.0;
                 break;
             case 2:
-                cpuSpeed = 4;
-                cpuPrice = 220.0;
+                this.cpuSpeed = 4;
+                this.cpuPrice += 120.0;
                 break;
         }
     }
 
-    static void setHardDriveCapacity(){
+    public void setHardDriveCapacity(){
         System.out.println("How much space do you think you'll need?");
         System.out.println("Enter a whole number for how many Terrbytes you want from 1 to 5");
         int usersize = userInput.nextInt();
+        // toDo input validation
         switch(usersize){
             case 1,2,3,4,5:
-                hardDriveCapacity = usersize;
-                hardDrivePrice = usersize * 30.0;
+                this.hardDriveCapacity = usersize;
+                this.hardDrivePrice = usersize * 15.0;
                 break;
             
             }
         }
 
-        static void setMonitorSize(){
+        public void setMonitorSize(){
             System.out.println("What size Monitor do you want? Bigger is better.");
             System.out.println("Enter 1 for 18 inch\n2 for 20 inch\n3 for 22 inch");
             int monitorSize = userInput.nextInt();
     
             switch(monitorSize){
                 case 1:
-                    monitorSizeInt = 18;
-                    monitorPrice = 100.0;
-                    System.out.println(monitorPrice);
+                    this.monitorSize = 18;
+                    this.monitorPrice = 100.0;
                     break;
                 case 2:
-                    monitorSizeInt = 20;
-                    monitorPrice = 150.0;
+                    this.monitorSize = 20;
+                    this.monitorPrice = 150.0;
                     break;
                 case 3:
-                    monitorSizeInt = 22;
-                    monitorPrice = 200.0;
+                    this.monitorSize = 22;
+                    this.monitorPrice = 200.0;
                     break;
+            }
+        }
+
+        public void setCaseSize(){
+            System.out.println("what size case would you like to cram all this into?");
+            System.out.println("Enter\n1 for Mini\n2 for normal");
+            int caseSizeInt = userInput.nextInt();
+
+            switch(caseSizeInt){
+                case 1:
+                    this.caseSize = "Mini";
+                    this.casePrice = 80;
+
+                case 2:
+                    this.caseSize = "Normal";
+                    this.casePrice = 100;
             }
         }
             
-        static void setCaseSize(){
-            System.out.println("What size case do you want? Bigger isn't always better.");
-            System.out.println("Enter 1 for small\n2 for full\n");
-            int caseSize = userInput.nextInt();
-    
-            switch(caseSize){
-                case 1:
-                    caseSizeInt = 18;
-                    casePrice = 50.0;
-                    break;
-                case 2:
-                    caseSizeInt = 20;
-                    casePrice = 80.0;
-                    break;
-            }
-
-        }
-
-        static void printRecipt(){
-            System.out.println("Congradulations on the new computer " + userName + "\nRecipt for your " + computerBrandString +" Laptop");
+        public void printRecipt(){
+            System.out.println("Congradulations on the new computer " + this.userName + "\nRecipt for your " + this.computerBrandString +" Desktop");
 
             System.out.println(dashes);
 
-            cpuPrice = cpuPrice * computerBrandMultiplyer;
-            System.out.printf(itemAndAnswer, " ", "CPU Brand:", cpuBrandString);
-            System.out.printf(itemAndAnswer, " ", "CPU Speed:", cpuSpeed + "Ghz");
-            System.out.printf(priceAndAnswer, " ", "Price:", "$" + cpuPrice + " \n");
+            this.cpuPrice = this.cpuPrice * this.computerBrandMultiplyer;
+            System.out.printf(itemAndAnswer, " ", "CPU Brand:", this.cpuBrandString);
+            System.out.printf(itemAndAnswer, " ", "CPU Speed:", this.cpuSpeed + "Ghz");
+            System.out.printf(priceAndAnswer, " ", "Price:", "$" + this.cpuPrice + " \n");
             // debug System.out.println(cpuPrice);
 
-            hardDrivePrice = hardDrivePrice * computerBrandMultiplyer;
-            System.out.printf(itemAndAnswer, " ", "Hard Dive Capacity:", hardDriveCapacity + "TB");
-            System.out.printf(priceAndAnswer, " ", "Price:", "$" + hardDrivePrice + " \n");
+            this.hardDrivePrice = this.hardDrivePrice * this.computerBrandMultiplyer;
+            System.out.printf(itemAndAnswer, " ", "Hard Dive Capacity:", this.hardDriveCapacity + "TB");
+            System.out.printf(priceAndAnswer, " ", "Price:", "$" + this.hardDrivePrice + " \n");
 
-            monitorPrice = monitorPrice * computerBrandMultiplyer;
-            System.out.printf(itemAndAnswer, " ", "Monitor size:", monitorSizeInt + " Inch");
-            System.out.printf(priceAndAnswer, " ", "Price:", "$" + monitorPrice);
-
-            casePrice = casePrice * computerBrandMultiplyer;
-            System.out.printf(itemAndAnswer, " ", "Case size:", caseSizeInt);
-            System.out.printf(priceAndAnswer, " ", "Price:", "$" + casePrice);
+            this.monitorPrice = this.monitorPrice * this.computerBrandMultiplyer;
+            System.out.printf(itemAndAnswer, " ", "Monitor size:", this.monitorSize + " Inch");
+            System.out.printf(priceAndAnswer, " ", "Price:", "$" + this.monitorPrice);
+            
+            this.casePrice = this.casePrice * this.computerBrandMultiplyer;
+            System.out.printf(itemAndAnswer, " ", "Case Size:", this.caseSize);
+            System.out.printf(priceAndAnswer, " ", "Price:", "$" + this.casePrice);
 
             System.out.println(dashes);
 
-            System.out.printf(priceAndAnswer, " ", "Total:", cpuPrice + hardDrivePrice + monitorPrice  + casePrice);
-        } 
+            System.out.printf(priceAndAnswer, " ", "Total:", this.cpuPrice + this.hardDrivePrice + this.monitorPrice + this.casePrice);
+        }
 }
+
+    

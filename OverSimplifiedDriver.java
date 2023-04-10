@@ -22,7 +22,15 @@ public class OverSimplifiedDriver {
                     userLaptop.printRecipt();
                     break;
                 case 2:
-                    Desktop.myDesktop();
+                    Desktop userDesktop = new Desktop();
+                    userDesktop.setUserName();
+                    userDesktop.setComputerBrand();
+                    userDesktop.setCpuBrand();
+                    userDesktop.setCPUSpeed();
+                    userDesktop.setHardDriveCapacity();
+                    userDesktop.setMonitorSize();
+                    userDesktop.setCaseSize();
+                    userDesktop.printRecipt();
                     break;
                 }
             }
